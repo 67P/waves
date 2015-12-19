@@ -42,28 +42,51 @@ html * {
   padding: 0;
 }
 
+.cf:before,
+.cf:after { content: " "; /* 1 */ display: table; /* 2 */ }
+.cf:after { clear: both; }
+.cf { *zoom: 1; }
+
 body {
   font: 14px monospace;
 }
 
-h1 {
-  font-size: 1rem;
-  font-weight: normal;
-  color: $blue;
-  padding: 0.5rem;
-}
-
-h2 {
-  font-size: 1rem;
-  font-weight: bold;
-  padding: 0.5rem;
-}
-
 header {
+  display: table;
   background-color: $base03;
+  position: fixed;
+  width: 100%;
+  h1, h2 {
+    font-size: 1rem;
+    font-weight: normal;
+    color: $blue;
+    padding: 0.5rem;
+    display: inline-block;
+  }
+  #channel-name, #date-switcher, #info {
+    display: table-cell;
+    width: 33.3%;
+  }
+  #date-switcher {
+    text-align: center;
+    a {
+      display: inline-block;
+      padding: 0.5rem;
+      &.enabled {
+        &:hover {
+          cursor: pointer;
+          background-color: $base02;
+        }
+      }
+      &.disabled {
+        color: $base03;
+      }
+    }
+  }
 }
 
 main {
+  padding-top: 45px;
   padding-bottom: 1rem;
   .message {
     display: table;

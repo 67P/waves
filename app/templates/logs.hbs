@@ -1,12 +1,18 @@
-<header>
-  <h1>#{{model.channel}}</h1>
+<header class="cf">
+  <div id="channel-name">
+    <h1>#{{model.channel}}</h1>
+  </div>
+  <div id="date-switcher">
+    <a {{action "goToPreviousDay"}} class="{{previousClass}}" title="previous">&lt;</a>
+    <h2>{{model.archive.today.[@id]}}</h2>
+    <a {{action "goToNextDay"}} class="{{nextClass}}" title="next">&gt;</a>
+  </div>
+  <div id="info">
+  </div>
 </header>
 
 <main>
-  {{#each model.dailyArchives as |day|}}
-    <h2>{{day.today.[@id]}}</h2>
-    {{#each day.today.messages as |message|}}
-      {{chat-message message=message}}
-    {{/each}}
+  {{#each messages as |message|}}
+    {{chat-message message=message}}
   {{/each}}
 </main>
