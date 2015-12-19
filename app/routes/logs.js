@@ -14,7 +14,6 @@ export default Ember.Route.extend({
       type: 'GET',
       dataType: 'json'
     }).then(dailyArchive => {
-      console.log(dailyArchive.today.messages);
       dailyArchives.push(dailyArchive);
       return dailyArchives;
     }, error => {

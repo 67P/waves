@@ -1,3 +1,4 @@
+/* global md5 */
 import Ember from 'ember';
 import moment from 'moment';
 
@@ -8,6 +9,10 @@ export default Ember.Component.extend({
 
   time: function() {
     return moment(this.get('message.timestamp')).format('HH:MM');
-  }.property('message.timestamp')
+  }.property('message.timestamp'),
+
+  nickColorClass: function() {
+    return 'color-'+md5(this.get('message.from')).match(/\d/);
+  }.property('message.from')
 
 });
