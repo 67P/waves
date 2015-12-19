@@ -6,7 +6,8 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('logs', {path: '/logs/:network/:channel'});
+  this.route('logs', {path: '/logs/:network/:channel/:year/:month/:day'});
+  this.route('today', {path: '/logs/:network/:channel/today'});
 });
 
 export default Router;
