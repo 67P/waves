@@ -1,0 +1,12 @@
+<header>
+  <h1>#{{model.channel}}</h1>
+</header>
+
+<main>
+  {{#each model.dailyArchives as |day|}}
+    <h2>{{day.today.[@id]}}</h2>
+    {{#each day.today.messages as |message|}}
+      {{chat-message message=message}}
+    {{/each}}
+  {{/each}}
+</main>

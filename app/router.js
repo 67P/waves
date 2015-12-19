@@ -6,6 +6,7 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('logs', {path: '/logs/:network/:channel'});
 });
 
 export default Router;
