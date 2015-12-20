@@ -8,7 +8,7 @@ export default Ember.Component.extend({
   classNames: ['message'],
 
   time: function() {
-    return moment(this.get('message.timestamp')).format('HH:MM');
+    return moment(this.get('message.timestamp')).format('HH:mm');
   }.property('message.timestamp'),
 
   nickColorClass: function() {
