@@ -98,10 +98,10 @@ main {
     }
     .from {
       width: 100px;
-      border-right: 1px solid $base0;
       text-align: right;
     }
     .text {
+      border-left: 1px solid $base0;
       text-align: left;
     }
   }
@@ -119,4 +119,39 @@ main {
 
 @media screen and (max-width: 768px) {
   .github-fork-ribbon-wrapper { display: none; }
+
+  header {
+    #info {
+      display: none;
+    }
+    #channel-name, #date-switcher {
+      display: table-cell;
+      width: 50%;
+    }
+
+    #date-switcher {
+      text-align: right;
+      a {
+        &.disabled {
+          display: none;
+        }
+      }
+    }
+  }
+
+  main {
+    .message {
+      time {
+        display: none;
+      }
+      .from {
+        display: block;
+        width: 64px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .text {
+      }
+    }
+  }
 }
