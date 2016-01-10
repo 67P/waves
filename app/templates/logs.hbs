@@ -3,7 +3,7 @@
     <h1>#{{model.channel}}</h1>
   </div>
   <div id="date-switcher">
-    <a {{action "goToPreviousDay"}} class="{{previousClass}}" title="previous">&lt;</a><h2>{{model.archive.today.[@id]}}</h2><a {{action "goToNextDay"}} class="{{nextClass}}" title="next">&gt;</a>
+    <a {{action "goToPreviousDay"}} class="{{previousClass}}" title="previous">&lt;</a><h2>{{model.archive.today.[@id]}} <span class="timezone">(UTC)</span></h2><a {{action "goToNextDay"}} class="{{nextClass}}" title="next">&gt;</a>
   </div>
   <div id="info">
   </div>
