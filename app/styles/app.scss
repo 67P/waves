@@ -129,6 +129,10 @@ main {
 @media screen and (max-width: 768px) {
   .github-fork-ribbon-wrapper { display: none; }
 
+  body {
+    font-size: 12px;
+  }
+
   header {
     #info {
       display: none;
