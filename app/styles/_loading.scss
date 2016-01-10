@@ -1,0 +1,50 @@
+#starfield-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+@-webkit-keyframes pulse {
+  from {
+    opacity: 0.0;
+    font-size: 100%;
+  }
+  to {
+    opacity: 1.0;
+    font-size: 150%;
+  }
+}
+@-moz-keyframes pulse {
+  from {
+    opacity: 0.0;
+  }
+  to {
+    opacity: 1.0;
+  }
+}
+
+#loading-text {
+  position: absolute;
+  width: 100%;
+  bottom: 2rem;
+  font-size: 24px;
+  font-family: monospace;
+  color: $blue;
+  text-align: center;
+
+  -webkit-animation-name: pulse;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-duration: 1s;
+  -moz-animation-name: pulse;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: ease-in-out;
+  -moz-animation-direction: alternate;
+  -moz-animation-duration: 1s;
+}

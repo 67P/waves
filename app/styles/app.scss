@@ -1,5 +1,3 @@
-@import "gh-fork-ribbon";
-
 $base03:    #002b36;
 $base02:    #073642;
 $base01:    #586e75;
@@ -16,6 +14,9 @@ $violet:    #6c71c4;
 $blue:      #268bd2;
 $cyan:      #2aa198;
 $green:     #859900;
+
+@import "loading";
+@import "gh-fork-ribbon";
 
 @mixin rebase($rebase03,$rebase02,$rebase01,$rebase00,$rebase0,$rebase1,$rebase2,$rebase3)
 {
@@ -88,6 +89,14 @@ header {
 }
 
 main {
+  &.index {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    p {
+      margin-bottom: 1em;
+    }
+  }
+
   padding-top: 45px;
   padding-bottom: 1rem;
   .message {
@@ -143,6 +152,10 @@ main {
   }
 
   main {
+    &.index {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
     .message {
       time {
         display: none;
