@@ -1,25 +1,28 @@
-// import { moduleForComponent, test } from 'ember-qunit';
-// import hbs from 'htmlbars-inline-precompile';
-//
-// moduleForComponent('chat-message', 'Integration | Component | chat message', {
-//   integration: true
-// });
+import { moduleForComponent, test } from 'ember-qunit';
+import hbs from 'htmlbars-inline-precompile';
 
-// test('it renders', function(assert) {
-  
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });" + EOL + EOL +
+moduleForComponent('chat-message', 'Integration | Component | chat message', {
+  integration: true
+});
 
-//   this.render(hbs`{{chat-message}}`);
-//
-//   assert.equal(this.$().text().trim(), '');
-//
-//   // Template block usage:" + EOL +
-//   this.render(hbs`
-//     {{#chat-message}}
-//       template block text
-//     {{/chat-message}}
-//   `);
-//
-//   assert.equal(this.$().text().trim(), 'template block text');
-// });
+test('it renders', function(assert) {
+  this.set('message', {
+    from: 'mendax',
+    timestamp: '1452529841427',
+    text: 'I\'m a short message with nothing to change.'
+  });
+  this.render(hbs`{{chat-message}}`);
+
+  assert.equal(this.$('span.url').length, 0);
+});
+
+test('it links URLs and surrounds them with a span', function(assert) {
+  this.set('message', {
+    from: 'mendax',
+    timestamp: '1452529841454',
+    text: 'You guise! Check out https://hackerbeach.org -- silverbucket is hanging out in the pope\'s living room!'
+  });
+  this.render(hbs`{{chat-message}}`);
+
+  assert.equal(this.$('span.url a').length, 1);
+});

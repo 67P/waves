@@ -15,11 +15,11 @@ $blue:      #268bd2;
 $cyan:      #2aa198;
 $green:     #859900;
 
+@import "mixins";
 @import "loading";
 @import "gh-fork-ribbon";
 
-@mixin rebase($rebase03,$rebase02,$rebase01,$rebase00,$rebase0,$rebase1,$rebase2,$rebase3)
-{
+@mixin rebase($rebase03,$rebase02,$rebase01,$rebase00,$rebase0,$rebase1,$rebase2,$rebase3) {
     background-color:$rebase03;
     color:$rebase0;
     * { color:$rebase0; }
@@ -112,6 +112,9 @@ main {
     .text {
       border-left: 1px solid $base0;
       text-align: left;
+      a {
+        @include nobreak();
+      }
     }
   }
 }

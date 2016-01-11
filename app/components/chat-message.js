@@ -1,6 +1,7 @@
 /* global md5 */
 import Ember from 'ember';
 import moment from 'moment';
+import linkifyStr from 'npm:linkifyjs/string';
 
 export default Ember.Component.extend({
 
@@ -13,6 +14,14 @@ export default Ember.Component.extend({
 
   nickColorClass: function() {
     return 'color-'+md5(this.get('message.from')).match(/\d/);
-  }.property('message.from')
+  }.property('message.from'),
+
+  formattedText: function() {
+    let text = linkifyStr(this.get('message.text'), {
+      defaultProtocol: 'https',
+      linkAttributes: { rel: 'nofollow' }
+    });
+    return new Ember.Handlebars.SafeString(text);
+  }.property('message')
 
 });
