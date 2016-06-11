@@ -2,7 +2,10 @@
   "predef": [
     "document",
     "window",
-    "-Promise"
+    "-Promise",
+    "md5",
+    "linkifyStr",
+    "moment"
   ],
   "browser": true,
   "boss": true,

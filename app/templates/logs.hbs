@@ -3,14 +3,20 @@
     <h1>#{{model.channel}}</h1>
   </div>
   <div id="date-switcher">
-    <a {{action "goToPreviousDay"}} class="{{previousClass}}" title="previous">&lt;</a><h2>{{model.archive.today.[@id]}} <span class="timezone">(UTC)</span></h2><a {{action "goToNextDay"}} class="{{nextClass}}" title="next">&gt;</a>
+    <a {{action "goToPreviousDay"}} class="{{previousClass}}" title="previous">&lt;</a><h2>{{dateToday}} <span class="timezone">(UTC)</span></h2><a {{action "goToNextDay"}} class="{{nextClass}}" title="next">&gt;</a>
   </div>
   <div id="info">
   </div>
 </header>
 
 <main>
-  {{#each messages as |message|}}
-    {{chat-message message=message}}
-  {{/each}}
+  {{#if archivePresent}}
+    {{#each messages as |message|}}
+      {{chat-message message=message}}
+    {{/each}}
+  {{else}}
+    <div class="no-messages">
+      <p>No messages logged for this day.</p>
+    </div>
+  {{/if}}
 </main>

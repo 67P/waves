@@ -1,7 +1,4 @@
-/* global md5 */
 import Ember from 'ember';
-import moment from 'moment';
-import linkifyStr from 'npm:linkifyjs/string';
 
 export default Ember.Component.extend({
 

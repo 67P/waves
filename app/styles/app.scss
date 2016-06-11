@@ -89,6 +89,13 @@ header {
 }
 
 main {
+  .no-messages {
+    padding: 0.5rem;
+    p {
+      margin-bottom: 1em;
+    }
+  }
+
   &.index {
     padding-left: 3rem;
     padding-right: 3rem;

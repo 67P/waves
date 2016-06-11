@@ -22,7 +22,12 @@ export default Ember.Route.extend({
     return Ember.RSVP.hash({
       network: params.network,
       channel: params.channel,
-      archive: fetchArchive
+      archive: fetchArchive,
+      dateParams: {
+        year: params.year,
+        month: params.month,
+        day: params.day
+      }
     });
   }
 

@@ -21,6 +21,9 @@ module.exports = function(defaults) {
   // along with the exports of each module as its value.
 
   app.import('vendor/starfield.js');
+  app.import('bower_components/moment/min/moment.min.js');
+  app.import('bower_components/linkifyjs/linkify.min.js');
+  app.import('bower_components/linkifyjs/linkify-string.min.js');
 
   return app.toTree();
 };
