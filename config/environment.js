@@ -18,7 +18,7 @@ module.exports = function(environment) {
       // when it is created
     },
 
-    publicLogsUrl: 'https://storage.5apps.com/kosmos/public/chat-messages/irc'
+    publicLogsUrl: 'https://storage.5apps.com/kosmos/public/chat-messages'
   };
 
   if (environment === 'development') {
