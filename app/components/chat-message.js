@@ -15,8 +15,12 @@ export default Ember.Component.extend({
 
   formattedText: function() {
     let text = linkifyStr(this.get('message.text'), {
-      defaultProtocol: 'https',
-      linkAttributes: { rel: 'nofollow' }
+      linkAttributes: { rel: 'nofollow' },
+      validate: {
+        url: function (value) {
+          return /^(http)s?:\/\//.test(value);
+        }
+      }
     });
     return new Ember.Handlebars.SafeString(text);
   }.property('message')
