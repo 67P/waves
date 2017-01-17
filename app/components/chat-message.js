@@ -23,6 +23,6 @@ export default Ember.Component.extend({
       }
     });
     return new Ember.Handlebars.SafeString(text);
-  }.property('message')
+  }.property('message.text')
 
 });
