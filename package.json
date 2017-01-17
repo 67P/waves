@@ -1,6 +1,6 @@
 {
   "name": "waves",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Small description for waves goes here",
   "private": true,
   "directories": {
@@ -9,13 +9,16 @@
   },
   "scripts": {
     "build": "ember build",
+    "build-prod": "ember build --environment production",
+    "commit-prod": "git add dist && git commit -am 'Update production build'",
     "start": "ember server",
     "test": "ember test",
-    "postinstall": "bower install"
+    "postinstall": "bower install",
+    "deploy": "npm run build-prod && npm run commit-prod && git subtree push --prefix dist 5apps master"
   },
-  "repository": "",
+  "repository": "https://github.com/67P/waves",
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">= 5.0.0"
   },
   "author": "",
   "license": "MIT",
