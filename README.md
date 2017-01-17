@@ -52,6 +52,19 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Deploying
 
+_This only concerns the public instance on https://waves.kosmos.org_
+
+Before deploying for the first time, you need to add the 5apps Deploy Git
+remote once:
+
+    git remote add 5apps git@5apps.com:kosmos_waves.git
+
+The rest is configured in the `scripts` section of `package.json` and can be
+run like this:
+
+* Make sure you're up to date (`git up` or `git pull --rebase origin master`)
+* `npm run deploy`
+
 TODO add deployment script/instructions
 
 ## Further Reading / Useful Links
