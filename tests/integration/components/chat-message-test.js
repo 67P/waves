@@ -26,3 +26,14 @@ test('it links URLs and surrounds them with a span', function(assert) {
 
   assert.equal(this.$('span.url a').length, 1);
 });
+
+test('it does not link simple domain names', function(assert) {
+  this.set('message', {
+    from: 'mendax',
+    timestamp: '1452529841454',
+    text: 'I just bought an-awesome-domain.com, do you like it?'
+  });
+  this.render(hbs`{{chat-message}}`);
+
+  assert.equal(this.$('span.url').length, 0);
+});
