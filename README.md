@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/67P/waves.svg?branch=master)](https://travis-ci.org/67P/waves)
+
 # Waves
 
 Waves is a viewer for public chat logs stored in a [remoteStorage][1] account
