@@ -65,8 +65,6 @@ run like this:
 * Make sure you're up to date (`git up` or `git pull --rebase origin master`)
 * `npm run deploy`
 
-TODO add deployment script/instructions
-
 ## Further Reading / Useful Links
 
 * [ember.js](http://emberjs.com/)
