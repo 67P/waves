@@ -8,32 +8,32 @@ moduleForComponent('chat-message', 'Integration | Component | chat message', {
 test('it renders', function(assert) {
   this.set('message', {
     from: 'mendax',
-    timestamp: '1452529841427',
+    timestamp: 1452529841427,
     text: 'I\'m a short message with nothing to change.'
   });
-  this.render(hbs`{{chat-message}}`);
+  this.render(hbs`{{chat-message message=message}}`);
 
-  assert.equal(this.$('span.url').length, 0);
+  assert.equal(this.$('a.linkified').length, 0);
 });
 
-test('it links URLs and surrounds them with a span', function(assert) {
+test('it links URLs', function(assert) {
   this.set('message', {
     from: 'mendax',
-    timestamp: '1452529841454',
+    timestamp: 1452529841454,
     text: 'You guise! Check out https://hackerbeach.org -- silverbucket is hanging out in the pope\'s living room!'
   });
-  this.render(hbs`{{chat-message}}`);
+  this.render(hbs`{{chat-message message=message}}`);
 
-  assert.equal(this.$('span.url a').length, 1);
+  assert.equal(this.$('a.linkified').length, 1);
 });
 
 test('it does not link simple domain names', function(assert) {
   this.set('message', {
     from: 'mendax',
-    timestamp: '1452529841454',
+    timestamp: 1452529841454,
     text: 'I just bought an-awesome-domain.com, do you like it?'
   });
-  this.render(hbs`{{chat-message}}`);
+  this.render(hbs`{{chat-message message=message}}`);
 
-  assert.equal(this.$('span.url').length, 0);
+  assert.equal(this.$('a.linkified').length, 0);
 });
