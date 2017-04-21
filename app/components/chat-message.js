@@ -9,6 +9,10 @@ export default Ember.Component.extend({
     return moment(this.get('message.timestamp')).format('HH:mm');
   }.property('message.timestamp'),
 
+  timestamp: function() {
+    return this.get('message.timestamp');
+  }.property('message.timestamp'),
+
   nickColorClass: function() {
     return 'color-'+md5(this.get('message.from')).match(/\d/);
   }.property('message.from'),
