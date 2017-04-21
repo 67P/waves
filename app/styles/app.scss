@@ -108,9 +108,16 @@ main {
   padding-bottom: 1rem;
   .message {
     display: table;
+    width: 100%;
     time, .from, .text {
       display: table-cell;
       padding: 0.1rem 0.5rem;
+    }
+    .current {
+      background: $blue;
+      * {
+        color: #fff;
+      }
     }
     .from {
       width: 100px;

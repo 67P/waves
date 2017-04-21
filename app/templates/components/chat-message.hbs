@@ -1,5 +1,7 @@
-<time class="dt-published" datetime="" id="{{timestamp}}">
-  [<a class="u-url time" href="#{{timestamp}}">{{time}}</a>]
-</time>
-<span class="from {{nickColorClass}}">{{message.from}}</span>
-<span class="text">{{formattedText}}</span>
+<div {{bind-attr class="isCurrentTimestamp:current"}}>
+  <time class="dt-published" datetime="" id="{{timestamp}}">
+    [<a class="u-url time" href="{{href}}#{{timestamp}}">{{time}}</a>]
+  </time>
+  <span class="from {{nickColorClass}}">{{message.from}}</span>
+  <span class="text">{{formattedText}}</span>
+</div>
