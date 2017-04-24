@@ -12,7 +12,7 @@
 <main>
   {{#if archivePresent}}
     {{#each messages as |message|}}
-      {{chat-message message=message}}
+      {{chat-message message=message current_timetamp=current_timetamp}}
     {{/each}}
   {{else}}
     <div class="no-messages">

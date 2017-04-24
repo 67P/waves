@@ -9,6 +9,17 @@ export default Ember.Component.extend({
     return moment(this.get('message.timestamp')).format('HH:mm');
   }.property('message.timestamp'),
 
+  // The location without the anchor
+  href: window.location.href.replace(window.location.hash, ""),
+
+  timestamp: function() {
+    return "timestamp_" + this.get('message.timestamp');
+  }.property('message.timestamp'),
+
+  isCurrentTimestamp: function() {
+    return window.location.hash.substr(1) === "timestamp_" + this.get('message.timestamp');
+  }.property('message.timestamp'),
+
   nickColorClass: function() {
     return 'color-'+md5(this.get('message.from')).match(/\d/);
   }.property('message.from'),
