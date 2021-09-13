@@ -1,7 +1,7 @@
 {
   "name": "waves",
   "version": "1.0.0",
-  "description": "Small description for waves goes here",
+  "description": "A simple Kosmos/RS chat log viewer",
   "private": true,
   "directories": {
     "doc": "doc",
